@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:3003/api/referral/";
+const API_URL =
+  "https://reffera-backend-production.up.railway.app/api/referral/";
 
 const initialState = {
   referralLink: null,

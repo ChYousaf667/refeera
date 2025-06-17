@@ -1,10 +1,12 @@
 import axios from "axios";
 
+// Use environment variable for API URL
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  "https://reffera-backend-production.up.railway.app";
+
 export const registerUser = async (data) => {
-  const response = await axios.post(
-    "http://localhost:3003/api/users/register-user",
-    data
-  );
+  const response = await axios.post(`${API_URL}/api/users/register-user`, data);
 
   if (response.data) {
     localStorage.setItem("myUser", JSON.stringify(response.data));
@@ -14,10 +16,7 @@ export const registerUser = async (data) => {
 };
 
 export const logUser = async (data) => {
-  const response = await axios.post(
-    "http://localhost:3003/api/users/login-user",
-    data
-  );
+  const response = await axios.post(`${API_URL}/api/users/login-user`, data);
 
   if (response.data) {
     localStorage.setItem("myUser", JSON.stringify(response.data));
@@ -38,7 +37,7 @@ export const verifyOTP = async (otpData, token) => {
   };
 
   const response = await axios.post(
-    "http://localhost:3003/api/users/verify-otp",
+    `${API_URL}/api/users/verify-otp`,
     otpData,
     config
   );

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3003/api/business/";
+const API_URL =
+  "https://reffera-backend-production.up.railway.app/api/business/";
 
 // Register business
 const registerBusiness = async (businessData) => {

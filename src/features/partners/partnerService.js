@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3003/api/partner/";
+const API_URL =
+  "https://reffera-backend-production.up.railway.app/api/partner/";
 
 const addPartner = async (partnerData, token) => {
   const config = {
